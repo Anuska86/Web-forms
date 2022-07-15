@@ -1,0 +1,53 @@
+body {
+  background-color: beige;
+}
+
+.box {
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: lightslategray;
+  border-radius: 5px;
+  border-top: solid 0px;
+}
+
+.header {
+padding: 10px;
+border-bottom: solid 1px #eee;
+text-shadow: 3px 3px 3px rgb(91, 102, 102);
+font-weight: 600;
+color:darkgreen;
+font-size:1cm;
+
+}
+
+.content {
+
+    padding: 10px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: oblique;
+
+}
+
+.primary {
+background-color: cadetblue;
+padding: 3px;
+border:0px;
+color:white;
+
+}
+
+
+.secundary {
+    background-color: rgb(91, 102, 102);
+    padding: 3px;
+    border:0px;
+    color:white;
+
+}
+
+.footer  {
+padding: 10px;
+border-top: solid 1px rgb(182, 143, 143);
+
+}
