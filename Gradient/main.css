@@ -1,0 +1,9 @@
+body {
+background-color: aliceblue;
+
+}
+
+.backgr {
+background-image:linear-gradient(to right, rgb(199, 183, 183), rgb(160, 71, 160));
+
+}
