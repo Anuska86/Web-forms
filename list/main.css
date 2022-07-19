@@ -1,0 +1,15 @@
+body {
+  background-color: rgb(179, 241, 241);
+}
+
+ul {
+  background-color: azure;
+  border: solid 1px #ddd;
+  border-radius: 5px;
+  padding-left: 0px;
+}
+
+li {
+  border-bottom: solid 1px #ddd;
+  padding: 20px;
+}

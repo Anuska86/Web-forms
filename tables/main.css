@@ -1,0 +1,28 @@
+body {
+  background-color: rgb(235, 218, 209);
+}
+
+table {
+  width: 100%;
+  background-color: rgb(199, 240, 199);
+  border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(153, 177, 169);
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+table th {
+  background-color: darkolivegreen;
+  color: white;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
