@@ -1,9 +1,9 @@
 import express from "express";
 import path from "path";
 import sgMail from "@sendgrid/mail";
-import dotenv from 'dotenv'
+import dotenv from "dotenv";
 
-dotenv.config()
+dotenv.config();
 
 const app = express();
 sgMail.setApiKey(process.env.SGKEY);
@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.static("app"));
 app.get("/", (req, res) => {
   res.sendFile(`${path.resolve()}/index.html`);
-/*
+  /*
   const msg = {
     to: "anuska@mailinator.com", // Change to your recipient
     from: "anasrm86@gmail.com", // Change to your verified sender
@@ -28,9 +28,23 @@ app.get("/", (req, res) => {
       console.error(error);
     }); */
 });
-app.post('/send',(req,res)=> {
-    console.log (req.body)
-    res.status(401).send('The email is wrong')
-})
+app.post("/send", (req, res) => {
+  const {to, subject, html} = req.body
+
+  const msg = {
+    to,
+    from:process.env.FROM,
+    subject,
+    html
+  }
+try {
+  await sgMail.send(msg)
+  res.sendStatus(204)
+} catch(e) {
+  console.log(e)
+  res.status(400).send('error')
+}
+
+});
 
 app.listen(3000, () => console.log("The app is running"));
