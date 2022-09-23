@@ -30,15 +30,27 @@ const styles = {
 class CartDetails extends Component {
   render() {
     const { cart } = this.props;
-    let total_price  = 0;
-    let total_points = 0;
+    let totalPrice = 0;
+    let totalPoints = 0;
+    let shippingCost = 7;
+    let shippingColor = "red";
+    let shippingFont = "normal";
 
     for (let i = 0; i < cart.length; i++) {
-      total_price += parseFloat(cart[i].price);
-      total_points += parseInt(cart[i].points);
+      totalPrice += parseFloat(cart[i].price);
+      totalPoints += parseInt(cart[i].points);
     }
 
     console.log(cart);
+
+    if (totalPoints >= 5) {
+      //shippingCost = 0;
+      shippingColor = "green";
+      shippingFont = "bold";
+    }
+
+    shippingCost = totalPoints >= 5 ? 0 : 7;
+
     return (
       <div style={styles.cartDetails}>
         <ul style={styles.ul}>
@@ -51,8 +63,13 @@ class CartDetails extends Component {
             </li>
           ))}
           <li style={styles.product}>
-            <span>Total price: {total_price} €</span>
-            <span>Total points: {total_points} points</span>
+            <span>Total price: {totalPrice} €</span>
+            <span>Total points: {totalPoints} points</span>
+          </li>
+          <li style={styles.product}>
+            <span style={{ color: shippingColor, fontWeight: shippingFont }}>
+              Shipping: {shippingCost} €
+            </span>
           </li>
         </ul>
       </div>
